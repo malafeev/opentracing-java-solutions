@@ -32,7 +32,7 @@ class Application extends GrailsAutoConfiguration {
 
 ## Microsoft Azure
 
-Azure java sdk is using OkHttp client and it supports adding of interceptor.   
+Azure java sdk is using OkHttp client and it supports adding interceptor.   
 [OpenTracing OkHttp Client Instrumentation](https://github.com/opentracing-contrib/java-okhttp)
 provides required interceptor. 
 
