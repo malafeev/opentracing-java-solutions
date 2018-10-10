@@ -29,3 +29,30 @@ class Application extends GrailsAutoConfiguration {
     }
 }
 ```
+
+## Microsoft Azure
+
+Azure java sdk is using OkHttp client and it supports adding of interceptor.   
+[OpenTracing OkHttp Client Instrumentation](https://github.com/opentracing-contrib/java-okhttp)
+provides required interceptor. 
+
+pom.xml
+```xml
+<dependency>
+    <groupId>io.opentracing.contrib</groupId>
+    <artifactId>opentracing-okhttp3</artifactId>
+    <version>VERSION</version>
+</dependency>
+```
+
+### Usage
+```java
+// Instantiate tracer
+Tracer tracer = ...
+
+// Add TracingInterceptor
+Azure azure = Azure.configure()
+        .withInterceptor(new TracingInterceptor(tracer))
+        .authenticate(new File(System.getenv("AZURE_AUTH_LOCATION")))
+        .withDefaultSubscription();
+```
