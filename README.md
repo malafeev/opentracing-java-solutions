@@ -94,7 +94,7 @@ pom.xml
     ```xml
     <listener>
         <listener-class>
-          com.AppServletContextListener
+          com.example.AppServletContextListener
         </listener-class>
     </listener>
     ```
